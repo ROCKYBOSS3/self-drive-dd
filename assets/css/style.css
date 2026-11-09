@@ -1,0 +1,815 @@
+/*======================================================================
+  Self Drive Car Goa – Clone
+  Colours, branding and design mirror https://hire.selfdrivecargoa.in/
+======================================================================*/
+
+/*---------------------------------------------
+  0. Reset & base
+---------------------------------------------*/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	color: #1a1a1a;
+	background: #ffffff;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.25s ease;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	border-style: none;
+}
+
+h1, h2, h3, h4 {
+	font-family: "Roboto Slab", Georgia, serif;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.375rem; }
+h4 { font-size: 1.125rem; }
+
+p { margin-bottom: 1rem; }
+
+ul { list-style: disc inside; margin-bottom: 1rem; }
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.section {
+	padding: 70px 0;
+}
+
+.section-title {
+	text-align: center;
+	font-size: 1.6rem;
+	margin-bottom: 40px;
+	color: #111;
+}
+
+.section-subtitle {
+	text-align: center;
+	color: #555;
+	margin-bottom: 30px;
+	font-size: 1rem;
+}
+
+/*---------------------------------------------
+  1. Skip link (accessibility)
+---------------------------------------------*/
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	z-index: 9999;
+}
+.skip-link:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	padding: 12px 20px;
+	background: #ff9d00;
+	color: #fff;
+	font-weight: 700;
+	border-radius: 4px;
+}
+
+/*---------------------------------------------
+  2. Header
+---------------------------------------------*/
+.site-header {
+	position: relative;
+}
+
+/* Top announcement bar (marquee) */
+.top-bar {
+	background: #000;
+	color: #fff;
+	font-weight: 700;
+	font-size: 0.9rem;
+	text-align: center;
+	padding: 6px 0;
+	overflow: hidden;
+}
+.top-bar-container {
+	display: inline-block;
+	animation: marquee 20s linear infinite;
+}
+@keyframes marquee {
+	0% { transform: translateX(100%); }
+	100% { transform: translateX(-100%); }
+}
+
+.header-main {
+	background: #fff;
+	border-bottom: 1px solid #eee;
+}
+
+.header-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 12px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.header-logo a {
+	display: block;
+}
+.header-logo img {
+	width: 200px;
+	height: auto;
+	display: block;
+}
+
+.header-actions {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+/*---------------------------------------------
+  3. Buttons
+---------------------------------------------*/
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.25s ease;
+	font-family: inherit;
+}
+
+.btn-sm { padding: 8px 14px; font-size: 0.85rem; }
+.btn-lg { padding: 14px 26px; font-size: 1rem; }
+
+.btn-icon-mark {
+	font-size: 1.25rem;
+	margin-right: 8px;
+	line-height: 1;
+}
+
+.btn-whatsapp {
+	background: #25d366;
+	color: #fff;
+}
+.btn-whatsapp.btn-sm {
+	padding: 6px 10px;
+	border-radius: 4px;
+}
+.btn-whatsapp.btn-sm .btn-icon-mark { margin-right: 0; font-size: 1.1rem; }
+.btn-whatsapp:hover {
+	background: #20ba5a;
+	color: #fff;
+}
+
+.btn-primary {
+	background: #ff9d00;
+	color: #fff;
+}
+.btn-primary:hover {
+	background: #f08e00;
+	color: #fff;
+	transform: translateY(-1px);
+}
+
+.btn-outline {
+	background: transparent;
+	color: #1163bd;
+	border: 2px solid #1163bd;
+	padding: 10px 20px;
+	font-size: 0.95rem;
+}
+.btn-outline:hover {
+	background: #1163bd;
+	color: #fff;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float {
+	position: fixed;
+	right: 22px;
+	bottom: 22px;
+	z-index: 1000;
+}
+.btn-whatsapp-float {
+	background: #25d366;
+	color: #fff;
+	padding: 12px 18px;
+	border-radius: 30px;
+	font-weight: 700;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.btn-whatsapp-float:hover { background: #20ba5a; }
+
+/*---------------------------------------------
+  4. Hero
+---------------------------------------------*/
+.hero {
+	background: #f9f9f9;
+	padding: 70px 0;
+}
+.hero-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	flex-wrap: wrap;
+}
+.hero-text { flex: 1 1 420px; }
+.hero-text h1 { margin-bottom: 16px; font-size: 1.9rem; }
+.hero-text h2 { margin-bottom: 24px; font-size: 1.25rem; color: #333; }
+.hero-image { flex: 1 1 420px; position: relative; }
+.hero-image img {
+	width: 100%;
+	border-radius: 10px;
+	box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/*---------------------------------------------
+  5. Quick booking form
+---------------------------------------------*/
+.booking {
+	background: #f4f4f4;
+}
+.booking-container {
+	max-width: 1100px;
+	margin: 0 auto;
+	background: linear-gradient(120deg, #1163BD, #1163BD);
+	border-radius: 26px;
+	overflow: hidden;
+	box-shadow: 0 12px 35px rgba(17, 99, 189, 0.25);
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+}
+.booking-info {
+	width: 23%;
+	min-height: 410px;
+	padding: 55px 26px;
+	background: linear-gradient(120deg, #151515, #202020 65%, #61400f);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.booking-tag {
+	color: #ff9d00;
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 1.5px;
+	margin-bottom: 14px;
+	text-transform: uppercase;
+}
+.booking-info h2 {
+	color: #fff;
+	font-size: 36px;
+	line-height: 1.03;
+	font-weight: 900;
+	margin: 0 0 14px;
+}
+.booking-info p {
+	color: #ddd;
+	font-size: 15px;
+	line-height: 1.55;
+	margin: 0;
+}
+
+.booking-form {
+	width: 77%;
+	padding: 25px 20px 22px;
+}
+.booking-form h3 {
+	color: #fff;
+	font-size: 23px;
+	font-weight: 900;
+	margin: 0 0 4px;
+}
+.booking-subtitle {
+	color: #dceff0;
+	font-size: 13px;
+	margin-bottom: 14px;
+}
+
+.booking-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8px;
+}
+.field {
+	position: relative;
+}
+.field label {
+	display: block;
+	color: #fff;
+	font-size: 9px;
+	font-weight: 800;
+	margin: 0 0 4px 10px;
+	text-transform: uppercase;
+}
+.field input,
+.field select {
+	width: 100%;
+	height: 61px;
+	border: 1px solid rgba(255,255,255,.4);
+	border-radius: 9px;
+	background: rgba(255,255,255,.12);
+	color: #fff;
+	padding: 0 10px;
+	font-size: 14px;
+	font-weight: 600;
+	outline: none;
+}
+.field input::placeholder { color: #e2eeee; opacity: 1; }
+.field input:focus,
+.field select:focus {
+	border-color: #ff9d00;
+	background: rgba(255,255,255,.16);
+}
+.field select option { color: #111; background: #fff; }
+.field input::-webkit-calendar-picker-indicator {
+	filter: brightness(0) invert(1);
+	cursor: pointer;
+}
+
+.field.full { grid-column: 1 / -1; }
+
+.btn-submit {
+	width: 100%;
+	height: 57px;
+	border: 0;
+	border-radius: 20px;
+	margin-top: 9px;
+	background: #ff9d00;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 900;
+	cursor: pointer;
+	transition: .25s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.btn-submit:hover {
+	background: #f08e00;
+	transform: translateY(-1px);
+}
+.btn-submit .btn-icon-mark { margin-right: 8px; font-size: 20px; }
+
+.booking-note {
+	text-align: center;
+	color: #d8eeee;
+	font-size: 11px;
+	margin-top: 8px;
+}
+.booking-message {
+	display: none;
+	text-align: center;
+	padding: 10px;
+	margin-top: 8px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 600;
+	background: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+	.booking-info { width: 30%; }
+	.booking-form { width: 70%; }
+	.booking-grid { grid-template-columns: repeat(2, 1fr); }
+	.booking-info h2 { font-size: 29px; }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+	.booking-container { flex-direction: column; border-radius: 18px; }
+	.booking-info { width: 100%; min-height: auto; padding: 28px 22px; }
+	.booking-info h2 { font-size: 32px; }
+	.booking-info p { font-size: 14px; }
+	.booking-form { width: 100%; padding: 24px 15px 20px; }
+	.booking-form h3 { font-size: 21px; }
+	.booking-grid { grid-template-columns: repeat(2, 1fr); gap: 9px; }
+	.field input, .field select { height: 55px; }
+	.btn-submit { height: 55px; border-radius: 16px; }
+}
+
+/*---------------------------------------------
+  6. Airport pickup
+---------------------------------------------*/
+.airport { text-align: center; background: #fff; }
+.airport .section-title { font-size: 1.5rem; line-height: 1.4; }
+.airport-ctas {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 20px;
+}
+
+/*---------------------------------------------
+  7. Car collection
+---------------------------------------------*/
+.cars { background: #fafafa; }
+.cars-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 28px;
+}
+.car-card {
+	background: #fff;
+	border: 1px solid #eaeaea;
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.car-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+.car-image {
+	height: 180px;
+	overflow: hidden;
+	background: #f1f1f1;
+}
+.car-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.car-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+.car-rating {
+	color: #ff9d00;
+	font-size: 0.9rem;
+	margin-bottom: 6px;
+	font-weight: 700;
+}
+.car-name {
+	font-family: "Roboto Slab", serif;
+	font-size: 1.15rem;
+	margin-bottom: 6px;
+	color: #111;
+}
+.car-min {
+	font-size: 0.85rem;
+	color: #888;
+	margin-bottom: 14px;
+}
+.btn-contact {
+	width: 100%;
+	background: #ff9d00;
+	color: #fff;
+	border: none;
+	padding: 12px;
+	font-weight: 700;
+	border-radius: 0 0 10px 10px;
+	cursor: pointer;
+	transition: background 0.25s ease;
+	font-family: inherit;
+}
+.btn-contact:hover { background: #f08e00; }
+
+/*---------------------------------------------
+  8. Why choose us
+---------------------------------------------*/
+.why { background: #fff; }
+.why-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 30px;
+}
+.why-card {
+	background: #fbfbfb;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	padding: 30px 24px;
+	transition: border-color 0.25s ease;
+}
+.why-card:hover { border-color: #1163bd; }
+.why-card h3 { margin-bottom: 12px; color: #111; }
+.why-card p { color: #555; font-size: 0.95rem; margin: 0; }
+
+/*---------------------------------------------
+  9. Features sliding ticker
+---------------------------------------------*/
+.features { background: #fafafa; text-align: center; }
+.features .section-subtitle { margin-bottom: 30px; }
+
+.feature-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0;
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.feature-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    animation: scrollFeature 30s linear infinite;
+}
+
+.feature-track:hover {
+    animation-play-state: paused;
+}
+
+.feature-img {
+    flex: 0 0 auto;
+    max-width: 170px;
+    height: auto;
+    opacity: 0.9;
+    border-radius: 6px;
+    filter: grayscale(30%);
+    transition: transform 0.25s ease, filter 0.3s ease, opacity 0.25s ease;
+}
+
+.feature-img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: grayscale(0%);
+    z-index: 2;
+}
+
+@keyframes scrollFeature {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* half width because set is duplicated */
+}
+
+/*---------------------------------------------
+  10. Brands sliding ticker
+---------------------------------------------*/
+.brands { background: #fff; text-align: center; }
+.brands .section-subtitle { margin-bottom: 30px; }
+
+.brand-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0;
+    /* subtle fade edges so logos slide in/out smoothly */
+    mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.brand-track {
+    display: flex;
+    gap: 70px;
+    width: max-content;
+    animation: scrollBrand 36s linear infinite;
+}
+
+.brand-track:hover {
+    animation-play-state: paused;
+}
+
+.brand {
+    flex: 0 0 auto;
+    text-align: center;
+    opacity: 0.9;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.brand:hover {
+    transform: scale(1.15);
+    opacity: 1;
+    z-index: 2;
+}
+
+.brand img {
+    max-width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    filter: grayscale(35%);
+    transition: filter 0.3s ease;
+}
+
+.brand img:hover {
+    filter: grayscale(0%);
+}
+
+.brand h3 {
+    font-size: 0.95rem;
+    color: #111;
+    margin: 0;
+    font-weight: 700;
+}
+
+@keyframes scrollBrand {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* half width because set is duplicated */
+}
+
+/*---------------------------------------------
+  11. Stats
+---------------------------------------------*/
+.stats { background: #f4f4f4; text-align: center; }
+.stats-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 30px;
+	text-align: center;
+}
+.stat { padding: 20px 10px; }
+.stat-number {
+	font-family: "Roboto Slab", serif;
+	font-size: 2rem;
+	font-weight: 900;
+	color: #1163bd;
+	display: block;
+}
+.stat-label { font-size: 0.95rem; color: #555; font-weight: 600; }
+
+/*---------------------------------------------
+  12. Documents
+---------------------------------------------*/
+.documents { background: #fff; }
+.documents .intro { text-align: center; color: #555; max-width: 700px; margin: 0 auto 40px; }
+.docs-columns {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 30px;
+}
+.doc-col h3 { color: #111; margin-bottom: 12px; }
+.doc-list { margin-bottom: 20px; color: #444; font-size: 0.95rem; }
+.doc-list li { margin-bottom: 6px; list-style: disc inside; }
+.doc-img {
+	width: 100%;
+	max-width: 320px;
+	margin: 0 auto;
+	border-radius: 8px;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/*---------------------------------------------
+  13. How it works
+---------------------------------------------*/
+.howitworks { background: #fafafa; text-align: center; }
+.howitworks .section-desc { color: #555; max-width: 600px; margin: 0 auto 40px; }
+.steps-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 30px;
+}
+.step {
+	background: #fff;
+	border: 1px solid #eaeaea;
+	border-radius: 10px;
+	padding: 30px 22px;
+}
+.step-number {
+	width: 42px;
+	height: 42px;
+	background: #1163bd;
+	color: #fff;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Roboto Slab", serif;
+	font-size: 1.25rem;
+	font-weight: 900;
+	margin-bottom: 16px;
+}
+.step h4 { margin-bottom: 12px; color: #111; }
+.step p { color: #555; font-size: 0.95rem; margin: 0; }
+.step-cta { margin-top: 30px; }
+
+/*---------------------------------------------
+  14. Goa / searched terms
+---------------------------------------------*/
+.goa-location { background: #fff; }
+.goa-location .section-title { text-align: left; }
+.goa-map {
+	max-width: 340px;
+	margin: 0 auto 30px;
+	display: block;
+	border-radius: 8px;
+}
+.searched h3 { margin-bottom: 14px; color: #111; font-size: 1.1rem; }
+.searched-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.searched-list li {
+	list-style: none;
+	background: #f4f4f4;
+	color: #333;
+	padding: 6px 14px;
+	border-radius: 20px;
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+/*---------------------------------------------
+  15. Footer
+---------------------------------------------*/
+.site-footer { background: #111; color: #ccc; padding: 40px 0 24px; }
+.site-footer .container { max-width: 1200px; }
+.copyright {
+	font-size: 0.9rem;
+	line-height: 1.6;
+	text-align: left;
+	color: #aaa;
+	max-width: 900px;
+}
+.copyright strong { color: #fff; }
+
+/*---------------------------------------------
+  16. CTA bar
+---------------------------------------------*/
+.cta-bar {
+	background: linear-gradient(120deg, #1163BD, #1163BD);
+	color: #fff;
+	text-align: center;
+	padding: 50px 0;
+}
+.cta-content h2 { color: #fff; margin-bottom: 20px; font-size: 1.4rem; }
+.cta-features {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 14px;
+	margin-bottom: 24px;
+}
+.cta-features li {
+	background: rgba(255,255,255,0.12);
+	color: #fff;
+	padding: 6px 16px;
+	border-radius: 20px;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+/*---------------------------------------------
+  17. Responsive general
+---------------------------------------------*/
+@media (max-width: 768px) {
+	h1 { font-size: 1.75rem; }
+	h2 { font-size: 1.4rem; }
+	h3 { font-size: 1.2rem; }
+	.section { padding: 50px 0; }
+	.header-container { flex-direction: column; align-items: stretch; gap: 14px; }
+	.header-logo img { width: 160px; }
+	.header-actions { justify-content: center; width: 100%; }
+	.hero { padding: 50px 0; }
+	.hero-text h1 { font-size: 1.6rem; }
+	.booking-info h2 { font-size: 28px; line-height: 1.1; }
+	.cta-content h2 { font-size: 1.2rem; }
+	.whatsapp-float { right: 14px; bottom: 14px; }
+}
+
+/* Screen reader only */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+}
