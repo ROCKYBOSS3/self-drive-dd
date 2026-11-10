@@ -743,7 +743,9 @@ ul { list-style: disc inside; margin-bottom: 1rem; }
 .goa-location { background: #fff; }
 .goa-location .section-title { text-align: left; }
 .goa-map {
-	max-width: 340px;
+	width: 100%;
+	max-width: none;
+	height: auto;
 	margin: 0 auto 30px;
 	display: block;
 	border-radius: 8px;
