@@ -513,23 +513,44 @@ ul { list-style: disc inside; margin-bottom: 1rem; }
 /*---------------------------------------------
   8. Why choose us
 ---------------------------------------------*/
-.why { background: #fff; }
-.why-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	gap: 30px;
+.why { background: #f7f9fc; position: relative; overflow: hidden; }
+.why::before {
+	content: ""; position: absolute; width: 360px; height: 360px; top: -190px; right: -100px;
+	border: 1px solid rgba(17, 99, 189, 0.08); border-radius: 50%;
+	box-shadow: 0 0 0 28px rgba(17, 99, 189, 0.025), 0 0 0 56px rgba(17, 99, 189, 0.02);
+	pointer-events: none;
 }
+.why .container { position: relative; }
+.why-heading { max-width: 680px; margin: 0 auto 42px; text-align: center; }
+.why-kicker { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 12px; color: #1163bd; font-size: .74rem; font-weight: 800; letter-spacing: .14em; }
+.why-kicker span { width: 22px; height: 2px; background: #ff9d00; }
+.why-heading .section-title { margin-bottom: 12px; }
+.why-heading .section-title em { color: #1163bd; font-style: normal; }
+.why-intro { max-width: 540px; margin: 0 auto; color: #657184; font-size: 1rem; }
+.why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .why-card {
-	background: #fbfbfb;
-	border: 1px solid #eee;
-	border-radius: 10px;
-	padding: 30px 24px;
-	transition: border-color 0.25s ease;
+	position: relative; min-height: 225px; padding: 24px; background: #fff; border: 1px solid #e8edf4;
+	border-radius: 14px; box-shadow: 0 8px 24px rgba(17, 42, 74, .035);
+	transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.why-card:hover { border-color: #1163bd; }
-.why-card h3 { margin-bottom: 12px; color: #111; }
-.why-card p { color: #555; font-size: 0.95rem; margin: 0; }
+.why-card:hover { transform: translateY(-5px); border-color: rgba(17, 99, 189, .28); box-shadow: 0 16px 32px rgba(17, 42, 74, .09); }
+.why-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+.why-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 12px; background: #fff4e2; color: #e58b00; font-size: 1.3rem; font-weight: 800; }
+.why-number { color: #b8c4d3; font-size: .75rem; font-weight: 800; letter-spacing: .1em; }
+.why-card h3 { margin: 0 0 9px; color: #14263d; font-size: 1.08rem; line-height: 1.35; }
+.why-card p { margin: 0 0 20px; color: #657184; font-size: .92rem; line-height: 1.65; }
+.why-card-note { color: #1163bd; font-size: .67rem; font-weight: 800; letter-spacing: .12em; }
+@media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+	.why-heading { margin-bottom: 30px; }
+	.why-grid { grid-template-columns: 1fr; gap: 13px; }
+	.why-card { min-height: 0; padding: 21px; }
+	.why-card-top { margin-bottom: 16px; }
+}
 
+/*---------------------------------------------
+  9. Features sliding ticker
+---------------------------------------------*/
 /*---------------------------------------------
   9. Features sliding ticker
 ---------------------------------------------*/
